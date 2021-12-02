@@ -25,6 +25,7 @@
   flex-direction: column;
   justify-content: center;
   background: #222;
+  z-index: 100;
 }
 
 #nav a {

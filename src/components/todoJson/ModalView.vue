@@ -1,5 +1,6 @@
 <template>
-  <div :class="{ modal: isModal, close: isClose }">
+  <!-- isModal true이면 modal클래스가 isClose가 true이면 close클래스가 실행되어 style변경 -->
+  <div :class="isModal ? 'modal__show' : 'close'">
     <input type="text" v-model="modifyValue" @keyup.enter="save" />
     <div class="Mbtn">
       <button @click="save" class="save_btn">저장하기</button>
@@ -13,7 +14,6 @@ export default {
   data() {
     return {
       isModal: true,
-      isClose: false,
       modifyValue: "",
     };
   },
@@ -24,9 +24,9 @@ export default {
   methods: {
     save() {
       if (this.isModal) {
-        this.isClose == true;
-        let btnValue = this.isClose;
-        console.log(btnValue);
+        //저장하기 버튼 누르면 모달창이 없어져야하므로 isModal를 false로 한다.
+        this.isModal = false;
+        let btnValue = this.isModal;
         this.$emit("save", btnValue, this.modifyValue);
       }
     },
@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style>
-.modal {
+.modal__show {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,7 +50,7 @@ export default {
   height: 400px;
   box-shadow: 2px 5px 10px 0px #ededed;
 }
-.modal input {
+.modal__show input {
   border: none;
   outline: none;
   width: 70%;
@@ -59,9 +59,9 @@ export default {
   background: #f8f8f8;
   box-shadow: 0 0px 3px rgb(225 225 225 / 81%);
 }
-.modal .Mbtn {
+.modal__show .Mbtn {
 }
-.modal .Mbtn .save_btn {
+.modal__show .Mbtn .save_btn {
   width: 100px;
   outline: none;
   border: none;
@@ -77,11 +77,11 @@ export default {
   transform: translateY(0);
   transition: 0.2s;
 }
-.modal .Mbtn .save_btn:hover {
+.modal__show .Mbtn .save_btn:hover {
   box-shadow: 0px 3px #2d875e;
   transform: translateY(5px);
 }
-.moda .close {
+.close {
   display: none;
 }
 </style>

@@ -6,6 +6,7 @@
         :key="index"
         :class="list.checked ? 'isCompleted' : ''"
       >
+        <!-- isCompleted클래스가 추가되면 style변경 -->
         <div class="view">
           <input
             type="checkbox"
@@ -13,12 +14,12 @@
             @change="toggleCheckbox(list, $event)"
             :id="index"
           />
+          <!-- check를 하면  toggleCheckbox 실행-->
           <label :for="index">{{ list.title }}</label>
         </div>
         <div class="btn">
-          <button v-on:click="removeList(index)">삭제</button>
-          <!-- <button v-on:click="test(list, index, this.id)">다햇슈</button> -->
-          <button v-on:click="modifyList(list, index)">수정</button>
+          <button v-on:click="removeList(index)">❌</button>
+          <button v-on:click="modifyList(list, index)">✍</button>
         </div>
       </li>
     </ul>
@@ -31,7 +32,7 @@ export default {
   data() {
     return {
       viewType: "list",
-      list_index: "",
+      // list_index: "",
       // list_index는 수정 value값을 넘겨주기 위해서
     };
   },
@@ -44,9 +45,9 @@ export default {
     },
     modifyList(list, index) {
       // console.log(list, index, "넘겨옴");
-      this.list_index = index;
-      let num = this.list_index;
-      this.$emit("modifyList", list.title, num);
+      // this.list_index = index;
+      // let num = this.list_index;
+      this.$emit("modifyList", list.title, index);
     },
     toggleCheckbox(list, e) {
       console.log(list, list.id, e.target.checked);
@@ -101,7 +102,8 @@ export default {
 }
 .todo ul.list li button {
   border: none;
-  background: #eee;
+  background: #f8f7f7;
+  border-radius: 10px;
   padding: 10px;
   cursor: pointer;
   margin-left: 10px;
