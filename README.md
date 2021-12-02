@@ -6,7 +6,7 @@ localstorage를 이용하여 To do List 만들어 본 것입니다.
 1. Todo.vue(상위 컴포넌트)안에 ToDoHeader.vue, ToDoInput.vue, ToDoList.vue (하위 컴포넌트)가 있습니다.
 2. todoItems라는 배열이 있으며 input 박스에서 전달 받은 데이터들이 저장되는 공간이다.
 3. ToDoHeader 컴포넌트에 msg라는 prop을 전달한다.
-4. ToDoInput 컴포넌트에서 addTodo라는 click 이벤트가 발생하면 해당 데이터들이 상위 컴포넌트로 전달된다.``
+4. ToDoInput 컴포넌트에서 addTodo라는 click 이벤트가 발생하면 해당 데이터들이 상위 컴포넌트로 전달된다.<br>
 4.1. addTodo 메소드는 localstorage에 저장되는 동시에 todoItems에 저장된다.
 5. ToDoList 컴포넌트는 todoItems의 데이터들을 바인딩하여 화면에 뿌려준다.
 
