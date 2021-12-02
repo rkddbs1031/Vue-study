@@ -1,10 +1,10 @@
 # vue 공부하기
 
-1. [Todo.vue](#1.Todo.vue)
+1. [Todo.vue](# 1장.-Todo.vue)
 
 
 
-### Todo.vue
+### 1장. Todo.vue
 localstorage를 이용하여 To do List 만들어 본 것입니다.
 
 1. Todo.vue(상위 컴포넌트)안에 ToDoHeader.vue, ToDoInput.vue, ToDoList.vue (하위 컴포넌트)가 있습니다.
