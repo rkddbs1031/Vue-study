@@ -20,6 +20,7 @@ export default {
     //enter 눌렀을 때 or 버튼 눌렀을 때 실행
     addList() {
       if (this.newList !== "") {
+        //trim() 메서드로 문자열 양 끝의 공백을 제거
         let value = this.newList && this.newList.trim();
         console.log(value);
         this.$emit("addList", value);

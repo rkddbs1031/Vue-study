@@ -1,27 +1,25 @@
 <template>
-  <!--<div class="view__btn">
-     <button
-      v-for="(item, index) in view"
-      :key="index"
-      @click="viewChange(item, index)"
-    >
-      {{ item }}
-    </button> 
-  </div>-->
   <div class="todo">
     <ul class="todo-list list" v-if="viewType == `list`">
-      <li v-for="(list, index) in props" :key="index">
-        <span>{{ list }}</span>
-        <button v-on:click="removeList(list, index)">clear</button>
-        <!-- v-on:click과 @:click 는 같은 것 -->
-      </li>
-    </ul>
-
-    <ul class="todo-list thumbnail" v-else>
-      <li v-for="(list, index) in props" :key="index">
-        <img :src="list.thumbnail" alt="" />
-        <span>{{ list.title }}</span>
-        <button @click="removeList(list, index)">clear</button>
+      <li
+        v-for="(list, index) in propsdata"
+        :key="index"
+        :class="list.checked ? 'isCompleted' : ''"
+      >
+        <div class="view">
+          <input
+            type="checkbox"
+            :checked="list.checked"
+            @change="toggleCheckbox(list, $event)"
+            :id="index"
+          />
+          <label :for="index">{{ list.title }}</label>
+        </div>
+        <div class="btn">
+          <button v-on:click="removeList(index)">삭제</button>
+          <!-- <button v-on:click="test(list, index, this.id)">다햇슈</button> -->
+          <button v-on:click="modifyList(list, index)">수정</button>
+        </div>
       </li>
     </ul>
   </div>
@@ -29,21 +27,35 @@
 
 <script>
 export default {
-  props: ["props"],
+  props: ["propsdata"],
   data() {
     return {
       viewType: "list",
-      view: ["list", "thumbnail"],
+      list_index: "",
+      // list_index는 수정 value값을 넘겨주기 위해서
     };
   },
-  created() {},
+  created() {
+    console.log(this.propsdata);
+  },
   methods: {
-    removeList(list, index) {
-      this.$emit("removeList", list, index);
-      // console.log("삭제할꼬양");
+    removeList(index) {
+      this.$emit("removeList", index);
     },
-    viewChange(item) {
-      this.viewType = item;
+    modifyList(list, index) {
+      // console.log(list, index, "넘겨옴");
+      this.list_index = index;
+      let num = this.list_index;
+      this.$emit("modifyList", list.title, num);
+    },
+    toggleCheckbox(list, e) {
+      console.log(list, list.id, e.target.checked);
+      //e.target.checked는 true가 됨.
+      this.$emit("toggleCheckbox", {
+        id: list.id,
+        checked: e.target.checked,
+      });
+      console.log(list.checked, "스타일변경");
     },
   },
 
@@ -72,32 +84,27 @@ export default {
 }
 
 .todo ul.list li {
-  border-bottom: 1px solid #eee;
-  padding: 15px 25px;
-  width: 100%;
-}
-
-.todo ul.list li {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 15px 25px;
+  width: 100%;
 }
-.todo ul.list li:before {
-  content: "▪";
-  display: block;
-  position: absolute;
-  margin-left: 10px;
-  font-size: 20px;
+.isCompleted {
+  text-decoration: line-through;
 }
-.todo ul.list li span {
-  margin-left: 40px;
+.todo ul.list li label {
+  margin-left: 20px;
+  cursor: pointer;
 }
 .todo ul.list li button {
   border: none;
   background: #eee;
   padding: 10px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 /* thumbnail */

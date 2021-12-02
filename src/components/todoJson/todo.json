@@ -1,62 +1,8 @@
-{
-    "todos":[
-        {
-            "thumbnail":"./images/vue.png",
-            "category":"Study",
-            "title":"Vue 공부하기",
-            "filtered":"n",
-            "id":"1"
-        },
-        {
-            "thumbnail":"./images/riding.jpg",
-            "category":"Exercise",
-            "title":"사이클 타기",
-            "filtered":"n",
-            "id":"2"
-        },
-        {
-            "thumbnail":"./images/js.png",
-            "category":"Study",
-            "title":"JS 공부하기",
-            "filtered":"n",
-            "id":"3"
-        },
-        {
-            "thumbnail":"./images/food.jpeg",
-            "category":"Shopping",
-            "title":"음식 주문하기",
-            "filtered":"n",
-            "id":"4"
-        },
-        {
-            "thumbnail":"./images/trip1.jpeg",
-            "category":"Trip",
-            "title":"국내 여행 가기",
-            "filtered":"n",
-            "id":"5"
-        },
-        {
-            "thumbnail":"./images/health.jpeg",
-            "category":"Exercise",
-            "title":"헬스장 가기",
-            "filtered":"n",
-            "id":"6"
-        },
-        {
-            "thumbnail":"./images/trip2.jpeg",
-            "category":"Trip",
-            "title":"해외 여행 가기",
-            "filtered":"n",
-            "id":"7"
-        },
-        {
-            "thumbnail":"./images/dress.jpg",
-            "category":"Shopping",
-            "title":"원피스 사기",
-            "filtered":"n",
-            "id":"8"
-        }
-        
-    ],
-    "category":["study","exercise","shopping","trip"]
-}
+{"todos":[
+    {"id":1,"title":"Vue 공부하기","checked":false},
+    {"id":2,"title":"유산소 운동하기","checked":false},
+    {"id":3,"title":"React 공부하기","checked":false},
+    {"id":4,"title":"실내 사이클 타기","checked":false},
+    {"id":5,"title":"JavaScript 공부하기","checked":false},
+    {"id":6,"title":"쇼핑하기","checked":false}
+]}
