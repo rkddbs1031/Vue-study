@@ -1,7 +1,7 @@
 # vue 공부하기
 
 1. [Todo.vue](#Todo.vue)
-
+2. [Todo2.vue](#Todo2.vue)
 
 
 ### Todo.vue
