@@ -4,6 +4,7 @@
     <router-link to="/about">About</router-link>
     <router-link to="/todo">Todo</router-link>
     <router-link to="/todo2">Todo2</router-link>
+    <router-link to="/api">Api</router-link>
   </div>
   <router-view />
 </template>

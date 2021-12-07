@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Todo from "../views/Todo.vue";
 import Todo2 from "../views/Todo2.vue";
+import Apitest from "../views/Apitest.vue";
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: "/todo2",
     name: "Todo2",
     component: Todo2,
+  },
+  {
+    path: "/api",
+    name: "Apitest",
+    component: Apitest,
   },
 ];
 
