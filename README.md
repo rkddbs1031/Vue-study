@@ -42,28 +42,6 @@ localstorage를 이용하여 To do List 만들어 본 것입니다.
 ### Todo2.vue
 JSON파일을 이용하여 To do List 만들어 본 것입니다.
 
-1. Todo.vue(상위 컴포넌트)안에 TodoHeader.vue, TodoInput2.vue, TodoList2.vue, ModalView.vue (하위 컴포넌트)가 있습니다.
-
-
-<<TodoHeader.vue>>
-- title이 나타나는 곳
-
-1. 상위 컴포넌트에서 부터 전달 받은 prop을 화면에 출력한다.
-
-
-<<TodoInput2.vue>>
-- text를 input박스에 입력
-
-
-<<TodoList2.vue>>
-- 해야할 일들(데이터)을 화면에 출력
-
-
-
-<<ModalView.vue>>
-
-
-
 
 
 ### Customize configuration
